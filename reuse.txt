@@ -1,0 +1,20 @@
+var mq_client = require('../rpc/client');
+
+var msg_payload = {
+		operation : "add_experience",
+		message : {
+			emailId : req.body.emailId,
+			from : req.body.from,
+			to : req.body.to,
+			company : req.body.company,
+			designation : req.body.designation
+		}
+};
+
+mq_client.make_request('profile_queue',msg_payload,function(err,results){
+	if(err){
+		res.status(err.status).json(err);
+	}else{
+		res.status(results.status).json(results);
+	}
+});

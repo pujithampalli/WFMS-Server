@@ -1,0 +1,20 @@
+{
+  "name": "WFMS-Server",
+  "description": "Workforce management system server",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "async": "latest",
+    "crypto": "latest",
+    "moment": "^2.9.0",
+    "mysql": "latest",
+	   "amqp" : "*"
+  }
+}
